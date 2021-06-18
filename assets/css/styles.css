@@ -2,11 +2,11 @@
 
 @font-face {
     font-family: 'icomoon';
-    src:  url('fonts/icomoon.eot?8s1iam');
-    src:  url('fonts/icomoon.eot?8s1iam#iefix') format('embedded-opentype'),
-      url('fonts/icomoon.ttf?8s1iam') format('truetype'),
-      url('fonts/icomoon.woff?8s1iam') format('woff'),
-      url('fonts/icomoon.svg?8s1iam#icomoon') format('svg');
+    src:  url('fonts/icomoon.eot?yjeoi6');
+    src:  url('fonts/icomoon.eot?yjeoi6#iefix') format('embedded-opentype'),
+      url('fonts/icomoon.ttf?yjeoi6') format('truetype'),
+      url('fonts/icomoon.woff?yjeoi6') format('woff'),
+      url('fonts/icomoon.svg?yjeoi6#icomoon') format('svg');
     font-weight: normal;
     font-style: normal;
     font-display: block;
@@ -26,26 +26,39 @@
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
   }
+
+  .icon-ic_btn_left:before {
+    content: "\e901";
+    color: #3176de;
+  }
+  .icon-ic_left:before {
+    content: "\e900";
+    color: #fff;
+  }
+
+  
 html, body{
     font-size: 16px;
     font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 0;
 }
 .bg-left{
-    max-width: 70%;
+    max-width: 60%;
     margin: 0;
     background-color: #F6F9FE;
 }
 
 .all-square{
     padding-top: 13%;
-    max-width: 62%;
+    max-width: 67%;
     margin: auto;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
 }
 .a-square{
-    padding: 0 10px 10px;
+    padding: 0 5px 10px 10px;
 }
 
 .product{
@@ -93,10 +106,6 @@ form label{
     font-size: 16px;
     padding-bottom: 3px;
 }
-.icon-ic_btn_left:before {
-    content: "\e901";
-    color: #3176de;
-  }
 
 .container-parameter{
     max-width: 59%;
@@ -107,9 +116,10 @@ form label{
 }
 .footer-panier{
     display: flex;
-    padding-top: 90px;
+    padding-top: 109px;
     justify-content: space-between;
     padding-bottom: 13%;
+    align-items: center;
 }
 .footer-panier button{
     padding: 7px 20px;
@@ -136,6 +146,7 @@ form label{
     padding: 10px 20px;
     color: #fff;
     font-size: 25px;
+    align-items: center;
 }
 
 p{
@@ -205,15 +216,28 @@ h3{
     color: #3176DE;
 }
 
-.icon-ic_left:before {
-    content: "\e900";
-    color: #fff;
-  }
-
 .bg-right{
-    width: 30%;
-    padding: 0 50px;
+    max-width: 30%;
+    padding: 0 100px;
 }
 .container{
     display: flex;
 }
+
+@media screen and (max-width: 1200px) {
+    .container {
+        flex-direction: column;
+    }
+    .bg-left {
+        max-width: 100%;
+    }
+    .bg-right {
+        max-width: 100%;
+    }
+    .produit img{
+        width: 100%;
+    }
+    .all-square{
+        max-width: 64%;
+    }
+  }
