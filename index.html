@@ -29,36 +29,47 @@
             </div>
         </div>
         <div class="container-parameter">
-            <form>
+            <form id="form-cart">
                 <div class="product">
                     <label>Produit</label>
-                    <select name="product" id="product">
-                        <option value="">Choisir un produit à ajouter au panier</option>
+                    <select name="product" id="Name">
+                        <option value="T-shirt">T-shirt</option>
+                        <option value="Pantalon">Pantalon</option>
+                        <option value="Pull">Pull</option>
                     </select>
                 </div>
 
                 <div class="parameter">
                     <div class="size">
                         <label>Taille</label>
-                        <select name="size" id="size">
-                            <option value="">L</option>
+                        <select name="size" id="Size">
+                            <option value="XS">XS</option>
+                            <option value="S">S</option>
+                            <option value="M">M</option>
+                            <option value="L">L</option>
+                            <option value="XL">XL</option>
+                            <option value="XXL">XXL</option>
                         </select>
                     </div>
                     <div class="color">
                         <label>Couleurs</label>
-                        <select name="color" id="color">
-                            <option value="">Choisir une couleur</option>
+                        <select name="color" id="Color">
+                            <option value="Violet">Violet</option>
+                            <option value="Rouge">Rouge</option>
+                            <option value="Vert">Vert</option>
+                            <option value="Bleu">Bleu</option>
+                            <option value="Gris">Gris</option>
                         </select>
                     </div>
                 </div>
-                <div class="comments">
+                <div class="comments" >
                     <label>Commentaire</label>
-                    <input type="text">
+                    <input type="text" name="comments">
                 </div>
             </form>
             <div class="footer-panier">
                 <p class="f-price">34.99€</p>
-                <button><img src="img/ic_btn_left.svg" alt="">Ajouter au panier</button>
+                <button onclick="addPanier()"><img src="img/ic_btn_left.svg" alt="">Ajouter au panier</button>
             </div>
         </div>
     </section>
@@ -75,30 +86,15 @@
             volutpat quisque. Lorem ipsum dolor sit amet, 
             consectetur adipiscing elit.</p>
         </div>
-        <div class="list">
+        <div class="list" id="list">
             <div class="l-item">
                 <div class="li-title">
                     <h3>Article 1</h3>
                     <p class="lit-price">2.55€</p>
             </div>
-            <p class="li-description">1x Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+            <p class="li-description" id="Description">1x Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
         </div>
 
-            <div class="l-item">
-                <div class="li-title">
-                    <h3>Article 1</h3>
-                    <p class="lit-price">2.55€</p>
-                </div>
-                <p class="li-description">1x Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-            </div>
-
-            <div class="l-item">
-                <div class="li-title">
-                    <h3>Article 1</h3>
-                    <p class="lit-price">2.55€</p>
-                </div>
-                <p class="li-description">1x Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-            </div>
         </div>
 
         <div class="footer">
@@ -108,4 +104,26 @@
     </section>
 </section>
 </body>
+
+<script>
+    function addcart(){
+        var Name = document.getElementById("Name").value;
+        var Size = document.getElementById("Size").value;
+        var Color = document.getElementById("Color").value;
+        var Description = document.getElementById("Description").value;
+
+        document.getElementById("list").innerHTML = document.getElementById("list").innerHTML + '<div class="l-item" id="item1"><div class="li-title"><h3>' + Name + '</h3><p class="lit-price">2.55€</p></div><p class="li-description">1x '+ Name + '<b> Taille: </b>' + Size + '<b> // Couleur: </b>' + Color +'</p></div>';
+    }
+
+    function addPanier(){
+        var form = document.getElementById("form-cart");
+        var product = form.elements.product.value;
+        var size = form.elements.size.value;
+        var color = form.elements.color.value;
+        var comments = form.elements.comments.value;
+
+        document.getElementById("list").innerHTML = document.getElementById("list").innerHTML + '<div class="l-item" id="item1"><div class="li-title"><h3>' + product + '</h3><p class="lit-price">2.55€</p></div><p class="li-description">1x '+ product + '<b> Taille: </b>' + size + '<b> // Couleur: </b>' + color +'</p></div>';
+    }
+</script>
+
 </html>
