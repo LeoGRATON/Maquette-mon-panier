@@ -100,21 +100,15 @@
         <div class="footer">
             <p class="footer-price">154€</p>
             <a href="validation.html"><button><img src="img/ic_left.svg" alt="">Valider mon panier</button></a>
+            
         </div>
+        <div style="text-align:right;"><button onclick="deletPanier()">Vider mon pannier</button></div>
     </section>
+    
 </section>
 </body>
 
 <script>
-    function addcart(){
-        var Name = document.getElementById("Name").value;
-        var Size = document.getElementById("Size").value;
-        var Color = document.getElementById("Color").value;
-        var Description = document.getElementById("Description").value;
-
-        document.getElementById("list").innerHTML = document.getElementById("list").innerHTML + '<div class="l-item" id="item1"><div class="li-title"><h3>' + Name + '</h3><p class="lit-price">2.55€</p></div><p class="li-description">1x '+ Name + '<b> Taille: </b>' + Size + '<b> // Couleur: </b>' + Color +'</p></div>';
-    }
-
     function addPanier(){
         var form = document.getElementById("form-cart");
         var product = form.elements.product.value;
@@ -123,6 +117,11 @@
         var comments = form.elements.comments.value;
 
         document.getElementById("list").innerHTML = document.getElementById("list").innerHTML + '<div class="l-item" id="item1"><div class="li-title"><h3>' + product + '</h3><p class="lit-price">2.55€</p></div><p class="li-description">1x '+ product + '<b> Taille: </b>' + size + '<b> // Couleur: </b>' + color +'</p></div>';
+    }
+
+    function deletPanier(){
+        var elem = document.getElementById("list");
+        elem.parentNode.removeChild(elem);
     }
 </script>
 
